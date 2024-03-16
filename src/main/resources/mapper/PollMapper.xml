@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.PollMapper">
+    <insert id="insertPoll">
+        INSERT INTO demo0.poll(userId, question, optionA, optionB, optionC, optionD)
+        VALUES(#{poll.userId}, #{poll.question}, #{poll.optionA}, #{poll.optionB}, #{poll.optionC}, #{poll.optionD});
+    </insert>
+
+    <select id="selectPolls">
+        SELECT * FROM demo0.poll
+    </select>
+
+    <select id="selectPoll">
+        SELECT * FROM demo0.poll WHERE id = #{id}
+    </select>
+</mapper>
